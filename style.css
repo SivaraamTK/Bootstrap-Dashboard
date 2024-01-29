@@ -1,0 +1,31 @@
+html, body { 
+    height: 100%; 
+    font-family: 'Ubuntu', sans-serif; 
+}  
+
+.wrapper{
+    overflow: hidden;
+}
+
+.navbar{
+    height: 10vh;
+}
+
+.sidebar {
+    padding: none;
+    margin-right: 10px;
+    width:max-content; 
+    height:100vh;
+    float: left;
+}
+
+.card{
+    padding-top: 20px;
+    width: 15rem; 
+    text-align: center;
+}
+
+svg.icon {
+    display: block;
+    margin: auto;
+}

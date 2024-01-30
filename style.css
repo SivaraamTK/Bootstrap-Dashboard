@@ -1,7 +1,7 @@
 :root {
-  --bs-dark: #1d1067;
-  --bs-light: #ffffff;
-  --bs-primary: #ff6196;
+  --bs-dark: rgb(29, 16, 103);
+  --bs-light: rgb(255, 255, 255);
+  --bs-primary: rgb(255, 97, 150);
 }
 
 html,
@@ -14,17 +14,49 @@ body {
 
 .wrapper {
   overflow: hidden;
+  width: 100%;
+  align-items: stretch;
+}
+
+body>div>div.top-navbar>nav>div {
+  padding-top: 15px;
 }
 
 .navbar {
   height: 10vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  color: var(--bs-light);
+  background-color: var(--bs-dark);
+  font-weight: bold;
 }
 
-.sidebar {
-  padding: none;
+body > div > div.top-navbar > nav > div{
+  padding-top: 1vh;
+}
+
+#toggle-box{
+  padding-top: 1px;
+  padding-right: 103px;
+  padding-bottom: 5px;
+}
+
+body > div > div.top-navbar > nav > div > ul > li:nth-child(1) > a > div{
+  padding-top: 20px;
+  padding-right: 800px;
+}
+
+body > div > div.top-navbar > nav > div > ul > li:nth-child(2),
+body > div > div.top-navbar > nav > div > ul > li:nth-child(3){
+  padding-top: 30px;
+}
+
+#sidebar {
+  min-width: 50px;
+  max-width: 250px;
   margin-right: 10px;
   width: fit-content;
-  height: 100vh;
+  height: 150vh;
   float: left;
   background-color: var(--bs-dark);
   color: var(--bs-light);
@@ -40,21 +72,65 @@ body {
   color: var(--bs-light);
 }
 
+.nav:after {
+  content: " ";
+  display: block;
+  border-bottom: 2px solid var(--bs-light);
+}
+
+#sidebar-wrapper > nav > div > ul > li:hover {
+  background-color: var(--bs-primary);
+}
+
 .card {
-  padding-top: 20px;
-  width: 15rem;
   text-align: center;
   background-color: var(--bs-light);
   color: var(--bs-dark);
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+  border-color: var(--bs-primary);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+#sidebar-wrapper > nav > div > div > div {
+  box-shadow: 0 0 0 0 white;
+  border: 0;
+  transition: none;
+}
+
+#sidebar-wrapper > nav > div > div > div:hover {
+  transform: none;
+}
+
+.card-header {
+  background-color: var(--bs-primary);
+  color: var(--bs-light);
+  font-weight: bold;
 }
 
 svg.icon {
+  padding-top: 10px;
   display: block;
   margin: auto;
 }
 
+.list-group-item:after {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid var(--bs-primary);
+}
+
 .btn-primary,
 .progress-bar {
+  background-color: var(--bs-dark);
+  border: none;
+}
+
+.btn-primary:hover,
+.progress-bar:hover {
   background-color: var(--bs-primary);
   border-color: var(--bs-primary);
 }

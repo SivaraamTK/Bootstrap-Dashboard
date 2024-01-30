@@ -1,350 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard Page</title>
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-    crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="top-navbar">
-        <!--Top Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <div class="logo">
-                <img
-                  src="data:image/jpeg;base64,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"
-                  alt="JMAN Group Logo"
-                  height="70"
-                  width="100"
-                />
-                Dashboard
-              </div>
-            </a>
-            <div>
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdownMenuLink"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      fill="currentColor"
-                      class="bi bi-person-circle"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                      <path
-                        fill-rule="evenodd"
-                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
-                      />
-                    </svg>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-item nav-link" href="#">
-                    <div class="notif button">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        fill="currentColor"
-                        class="bi bi-bell-fill"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="top-navbar">
+      <!--Top Navbar -->
+      <nav class="navbar sticky-top navbar-expand navbar-dark">
+        <div class="container-fluid">
+          <div id="toggle-box">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary text-white align-left"
+              data-bs-toggle="collapse" data-bs-target="#sidebar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+              </svg>
+              Menu
+            </button>
           </div>
-        </nav>
-      </div>
-      <!-- End Navbar -->
-      <hr />
-      <!-- Left Side menu bar -->
-      <div class="sidebar">
-        <div class="sidebar-wrapper">
-          <div class="d-flex flex-column flex-shrink-0 p-3 text-white">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-between align-right">
+            <li class="nav-item">
+              <a class="navbar-brand" href="#">
+                <div class="logo">
+                  <img
+                    src="data:image/jpeg;base64,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"
+                    alt="JMAN Group Logo" style="width: 100px; 
+                        height: 70px; 
+                        object-fit: cover;
+                        object-position: 25% 25%; " />
+                  Dashboard
+                </div>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarProfileDropdown" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                  class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                  <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                </svg>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Home</a></li>
+                  <li><a class="dropdown-item" href="#">My Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Switch Account</a></li>
+                </ul>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarNotifiDropdown" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                  class="bi bi-bell-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                </svg>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">No Missed Notifications</a></li>
+                </ul>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- End Navbar -->
+    <!-- Left Side menu bar -->
+    <div id="sidebar" class="collapse show">
+      <div id="sidebar-wrapper">
+        <nav>
+          <div
+            class="d-flex flex-column flex-shrink-0 p-1 justify-content-between text-white offcanvas-md offcanvas-start">
             <ul class="nav nav-pills flex-column mb-auto">
               <li class="nav-item mb-1">
-                <a href="#" class="nav-link active" aria-current="page">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-layout-text-window-reverse"
-                    viewBox="0 0 16 16"
-                  >
+                <a href="#" class="nav-link text-white" aria-current="page">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-layout-text-window-reverse" viewBox="0 0 16 16">
                     <path
-                      d="M13 6.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5m0 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5m-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z"
-                    />
+                      d="M13 6.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5m0 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5m-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z" />
                     <path
-                      d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1zM1 4v10a1 1 0 0 0 1 1h2V4zm4 0v11h9a1 1 0 0 0 1-1V4z"
-                    />
+                      d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1zM1 4v10a1 1 0 0 0 1 1h2V4zm4 0v11h9a1 1 0 0 0 1-1V4z" />
                   </svg>
                   Dashboard
                 </a>
               </li>
               <li class="nav-item mb-1">
                 <a href="#" class="nav-link text-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-arrow-left-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"
-                    />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5" />
                   </svg>
                   Transaction
                 </a>
               </li>
               <li class="nav-item mb-1">
                 <a href="#" class="nav-link text-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-credit-card-fill"
-                    viewBox="0 0 16 16"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-credit-card-fill" viewBox="0 0 16 16">
                     <path
-                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0zm0 3v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7zm3 2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1"
-                    />
+                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0zm0 3v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7zm3 2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1" />
                   </svg>
                   Payment
                 </a>
               </li>
               <li class="nav-item mb-1">
                 <a href="#" class="nav-link text-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-clipboard-data-fill"
-                    viewBox="0 0 16 16"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-clipboard-data-fill" viewBox="0 0 16 16">
                     <path
-                      d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"
-                    />
+                      d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
                     <path
-                      d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zM10 8a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1"
-                    />
+                      d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zM10 8a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1" />
                   </svg>
                   Planning
                 </a>
               </li>
               <li class="nav-item mb-1">
                 <a href="#" class="nav-link text-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-gear-fill"
-                    viewBox="0 0 16 16"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-gear-fill" viewBox="0 0 16 16">
                     <path
-                      d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"
-                    />
+                      d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
                   </svg>
                   Settings
                 </a>
               </li>
               <li class="nav-item mb-1">
                 <a href="#" class="nav-link text-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-flag-fill"
-                    viewBox="0 0 16 16"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-flag-fill" viewBox="0 0 16 16">
                     <path
-                      d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001"
-                    />
+                      d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001" />
                   </svg>
                   Help
                 </a>
               </li>
               <li class="nav-item mb-1">
                 <a href="#" class="nav-link text-white">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-box-arrow-left"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"
-                    />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+                    <path fill-rule="evenodd"
+                      d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
                   </svg>
                   Logout
                 </a>
+
               </li>
             </ul>
-            <div class="card text-black">
+            <div class="d-flex">
+              <div class="card mt-1 mb-0">
                 <div class="card-body">
                   <h5 class="card-title">Found a bug?</h5>
                   <p class="card-text">Report them to fix it</p>
                   <a href="#" class="btn btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bug-fill" viewBox="0 0 16 16">
-                        <path d="M4.978.855a.5.5 0 1 0-.956.29l.41 1.352A5 5 0 0 0 3 6h10a5 5 0 0 0-1.432-3.503l.41-1.352a.5.5 0 1 0-.956-.29l-.291.956A5 5 0 0 0 8 1a5 5 0 0 0-2.731.811l-.29-.956z"/>
-                        <path d="M13 6v1H8.5v8.975A5 5 0 0 0 13 11h.5a.5.5 0 0 1 .5.5v.5a.5.5 0 1 0 1 0v-.5a1.5 1.5 0 0 0-1.5-1.5H13V9h1.5a.5.5 0 0 0 0-1H13V7h.5A1.5 1.5 0 0 0 15 5.5V5a.5.5 0 0 0-1 0v.5a.5.5 0 0 1-.5.5zm-5.5 9.975V7H3V6h-.5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 0-1 0v.5A1.5 1.5 0 0 0 2.5 7H3v1H1.5a.5.5 0 0 0 0 1H3v1h-.5A1.5 1.5 0 0 0 1 11.5v.5a.5.5 0 1 0 1 0v-.5a.5.5 0 0 1 .5-.5H3a5 5 0 0 0 4.5 4.975"/>
-                      </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-bug-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M4.978.855a.5.5 0 1 0-.956.29l.41 1.352A5 5 0 0 0 3 6h10a5 5 0 0 0-1.432-3.503l.41-1.352a.5.5 0 1 0-.956-.29l-.291.956A5 5 0 0 0 8 1a5 5 0 0 0-2.731.811l-.29-.956z" />
+                      <path
+                        d="M13 6v1H8.5v8.975A5 5 0 0 0 13 11h.5a.5.5 0 0 1 .5.5v.5a.5.5 0 1 0 1 0v-.5a1.5 1.5 0 0 0-1.5-1.5H13V9h1.5a.5.5 0 0 0 0-1H13V7h.5A1.5 1.5 0 0 0 15 5.5V5a.5.5 0 0 0-1 0v.5a.5.5 0 0 1-.5.5zm-5.5 9.975V7H3V6h-.5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 0-1 0v.5A1.5 1.5 0 0 0 2.5 7H3v1H1.5a.5.5 0 0 0 0 1H3v1h-.5A1.5 1.5 0 0 0 1 11.5v.5a.5.5 0 1 0 1 0v-.5a.5.5 0 0 1 .5-.5H3a5 5 0 0 0 4.5 4.975" />
+                    </svg>
                     Report
-                </a>
+                  </a>
                 </div>
               </div>
+            </div>
           </div>
-        </div>
+        </nav>
       </div>
-      <!--Sidebar ends -->
-      <!-- Main Content area -->
-      <div class="content-wrapper">
-        <div class="container">
+    </div>
+    <!--Sidebar ends -->
+    <!-- Main Content area -->
+    <div class="content-wrapper">
+      <div class="container">
+        <div class="card-deck">
           <div class="row">
-            <div class="col">
+            <div class="col-lg-3 col-md-6 col-12 p-2">
               <div class="balance-card">
                 <div class="card">
-                  <svg
-                    class="icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="48"
-                    height="48"
-                    fill="currentColor"
-                    class="bi bi-wallet2"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"
-                    />
-                  </svg>
                   <div class="card-header">
                     Balance
                   </div>
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                    class="bi bi-wallet2" viewBox="0 0 16 16">
+                    <path
+                      d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z" />
+                  </svg>
                   <div class="card-body">
                     <p class="card-text">$592.323</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg-3 col-md-6 col-12 p-2">
               <div class="income-card">
                 <div class="card">
-                  <svg
-                    class="icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="48"
-                    height="48"
-                    fill="currentColor"
-                    class="bi bi-coin"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z"
-                    />
-                    <path
-                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
-                    />
-                    <path
-                      d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"
-                    />
-                  </svg>
                   <div class="card-header">
                     Income
                   </div>
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                    class="bi bi-coin" viewBox="0 0 16 16">
+                    <path
+                      d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z" />
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                  </svg>
                   <div class="card-body">
                     <p class="card-text">$149.513</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg-3 col-md-6 col-12 p-2">
               <div class="savings-card">
                 <div class="card">
-                  <svg
-                    class="icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="48"
-                    height="48"
-                    fill="currentColor"
-                    class="bi bi-cash-stack"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
-                    />
-                    <path
-                      d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"
-                    />
-                  </svg>
                   <div class="card-header">
                     Savings
                   </div>
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                    class="bi bi-cash-stack" viewBox="0 0 16 16">
+                    <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                    <path
+                      d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z" />
+                  </svg>
                   <div class="card-body">
                     <p class="card-text">$79.290</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg-3 col-md-6 col-12 p-2">
               <div class="expense-card">
                 <div class="card">
-                  <svg
-                    class="icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="48"
-                    height="48"
-                    fill="currentColor"
-                    class="bi bi-receipt-cutoff"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5M11.5 4a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"
-                    />
-                    <path
-                      d="M2.354.646a.5.5 0 0 0-.801.13l-.5 1A.5.5 0 0 0 1 2v13H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H15V2a.5.5 0 0 0-.053-.224l-.5-1a.5.5 0 0 0-.8-.13L13 1.293l-.646-.647a.5.5 0 0 0-.708 0L11 1.293l-.646-.647a.5.5 0 0 0-.708 0L9 1.293 8.354.646a.5.5 0 0 0-.708 0L7 1.293 6.354.646a.5.5 0 0 0-.708 0L5 1.293 4.354.646a.5.5 0 0 0-.708 0L3 1.293zm-.217 1.198.51.51a.5.5 0 0 0 .707 0L4 1.707l.646.647a.5.5 0 0 0 .708 0L6 1.707l.646.647a.5.5 0 0 0 .708 0L8 1.707l.646.647a.5.5 0 0 0 .708 0L10 1.707l.646.647a.5.5 0 0 0 .708 0L12 1.707l.646.647a.5.5 0 0 0 .708 0l.509-.51.137.274V15H2V2.118z"
-                    />
-                  </svg>
                   <div class="card-header">
                     Expense
                   </div>
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                    class="bi bi-receipt-cutoff" viewBox="0 0 16 16">
+                    <path
+                      d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5M11.5 4a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z" />
+                    <path
+                      d="M2.354.646a.5.5 0 0 0-.801.13l-.5 1A.5.5 0 0 0 1 2v13H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H15V2a.5.5 0 0 0-.053-.224l-.5-1a.5.5 0 0 0-.8-.13L13 1.293l-.646-.647a.5.5 0 0 0-.708 0L11 1.293l-.646-.647a.5.5 0 0 0-.708 0L9 1.293 8.354.646a.5.5 0 0 0-.708 0L7 1.293 6.354.646a.5.5 0 0 0-.708 0L5 1.293 4.354.646a.5.5 0 0 0-.708 0L3 1.293zm-.217 1.198.51.51a.5.5 0 0 0 .707 0L4 1.707l.646.647a.5.5 0 0 0 .708 0L6 1.707l.646.647a.5.5 0 0 0 .708 0L8 1.707l.646.647a.5.5 0 0 0 .708 0L10 1.707l.646.647a.5.5 0 0 0 .708 0L12 1.707l.646.647a.5.5 0 0 0 .708 0l.509-.51.137.274V15H2V2.118z" />
+                  </svg>
                   <div class="card-body">
                     <p class="card-text">$271.560</p>
                   </div>
@@ -353,31 +263,31 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6 col-12 p-2">
               <div class="graph-card">
                 <div class="card" style="width: auto; height:54.5vh;">
-                    <div class="card-header">
-                        Money Flow
-                      </div>
+                  <div class="card-header">
+                    Money Flow
+                  </div>
                   <canvas id="moneyFlowChart"></canvas>
                 </div>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-12 p-2">
               <div class="saved-card">
                 <div class="card" style="width: auto">
-                    <div class="card-header">
-                        Saved Cards
-                      </div>
-                  <img
-                    class="card-img-top"
+                  <div class="card-header">
+                    Saved Cards
+                  </div>
+                  <img class="card-img-top"
                     src="data:image/jpeg;base64,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"
-                    alt="Card image cap"
-                    height="300vh"
-                  />
+                    alt="Card image cap" style="width: 300px; 
+                      height: 165px; 
+                      object-fit: fit;
+                      align-self: center;" />
                   <div class="card-body">
                     <p class="card-text">
-                      Balance: $5000 &emsp;&emsp; Expiry Date: 01/23
+                      Balance: $5000 &emsp;&emsp; Expiry Date: 12/20
                     </p>
                     <p class="card-text">
                       Type: Visa &emsp;&emsp; Status: Active
@@ -389,53 +299,58 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-3">
-                <div class="transaction-card">
-                    <div class="card">
-                      <div class="card-header">
-                        Transaction History
-                      </div>
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Paid Adobe Photoshop - $62 on 01/01/2022 at 12:00 PM</li>
-                        <li class="list-group-item">Sketch costed - $15 on 02/01/2022 at 1:00 PM</li>
-                        <li class="list-group-item">Book Sales + $100 on 03/01/2022 at 2:00 PM</li>
-                      </ul>
+            <div class="col-lg-3 col-md-6 col-12 p-2">
+              <div class="transaction-card">
+                <div class="card">
+                  <div class="card-header">
+                    Transaction History
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Paid Adobe Photoshop - $62 on 01/01/2022 at 12:00 PM</li>
+                    <li class="list-group-item">Sketch costed - $15 on 02/01/2022 at 1:00 PM</li>
+                    <li class="list-group-item">Book Sales + $100 on 03/01/2022 at 2:00 PM</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 p-2">
+              <div class="planning-card">
+                <div class="card">
+                  <div class="card-header">
+                    Planning
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Buying a House</h5>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 23%;" aria-valuenow="23"
+                        aria-valuemin="0" aria-valuemax="100">23%</div>
+                    </div>
+                    <h5 class="card-title">Visiting Japan</h5>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                        aria-valuemin="0" aria-valuemax="100">75%</div>
                     </div>
                   </div>
+                </div>
               </div>
-              <div class="col-3">
-                <div class="planning-card">
-                    <div class="card">
-                        <div class="card-header">
-                            Planning
-                          </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Buying a House</h5>
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 23%;" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100">23%</div>
-                        </div>
-                        <h5 class="card-title">Visiting Japan</h5>
-                        <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/chart.js"
-      crossorigin="anonymous"
-    ></script>
-    <script>
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+        });
+      });
+    </script>
+    <script type="text/javascript">
       // Chart Script
       var ctx = document.getElementById("moneyFlowChart").getContext("2d");
       var chart = new Chart(ctx, {
@@ -454,8 +369,8 @@
             {
               label: "Money Flow",
               data: [0, 10, 5, 2, 20, 30, 45],
-              backgroundColor: "rgba(75, 192, 192, 0.2)",
-              borderColor: "rgba(75, 192, 192, 1)",
+              backgroundColor: "rgb(29, 16, 103)",
+              borderColor: "rgb(29, 16, 103)",
               borderWidth: 1,
             },
           ],
@@ -469,5 +384,6 @@
         },
       });
     </script>
-  </body>
+</body>
+
 </html>
